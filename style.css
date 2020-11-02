@@ -2,12 +2,14 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
 
+  overflow: hidden;
+
   background: linear-gradient(120deg,#fdfbfb 0,#ebedee 100%);
 }
 
 .use-keyboard-input {
   font-family: inherit;
-  font-size: 20px;
+  font-size: 1.25rem;
 
   display: block;
   overflow-y: auto;
@@ -15,7 +17,7 @@ body {
   width: 69%;
   height: calc(100vh - 600px);
   min-height: 280px;
-  margin: 30px auto;
+  margin: 10px auto;
   padding: 10px;
 
   resize: none;
@@ -77,8 +79,6 @@ body {
   border-radius: 4px;
   outline: none;
   background: #f85032;
-  background: -webkit-linear-gradient(to right, #e73827, #f85032);
-  background:         linear-gradient(to right, #e73827, #f85032);
   box-shadow: 0 3px  #050505;
 
   -webkit-tap-highlight-color: transparent;
@@ -91,6 +91,16 @@ body {
 .keyboard__key:active {
   border-color: #202020;
   box-shadow: none;
+}
+
+.keyboard__key--active-common {
+  border-color: #202020;
+  background: #ff2600;
+  box-shadow: none;
+}
+
+.keyboard__key--spec.keyboard__key--active-common {
+  background: #028d32;
 }
 
 .keyboard__key--wide {
@@ -137,11 +147,11 @@ body {
 }
 
 @media only screen and (max-width: 991px) {
-  .keyboard,
   .use-keyboard-input {
-    width: 98%;
-  }
+    font-size: 1.05rem;
 
+    width: 96%;
+  }
 
   .keyboard__key {
     font-size: .875rem;
@@ -151,12 +161,44 @@ body {
   }
 
   .keyboard__key--extra-wide {
-    width: 100%;
     max-width: 200px;
   }
 
   .keyboard__key--wide {
-    width: 100%;
     max-width: 70px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .keyboard__key {
+    font-size: .875rem;
+
+    max-width: 29px;
+    max-height: 29px;
+  }
+
+  .keyboard__key--extra-wide {
+    max-width: 140px;
+  }
+
+  .keyboard__key--wide {
+    max-width: 65px;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .keyboard__key {
+    font-size: .875rem;
+
+    max-width: 23px;
+    max-height: 30px;
+  }
+
+  .keyboard__key--extra-wide {
+    max-width: 130px;
+  }
+
+  .keyboard__key--wide {
+    max-width: 65px;
   }
 }
